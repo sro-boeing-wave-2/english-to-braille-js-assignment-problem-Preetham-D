@@ -12,9 +12,7 @@ const mapping = new Map(englishToBrailleLiteralSet);
 function convert() {
   const slang = document.getElementById('sourceLangText').value;
   let out = '';
-  out += slang.split('')
-  .map(c => mapping.get(c))
-  .join('');
+  out += slang.split('').map(c => mapping.get(c)).join('');
   document.getElementById('targetLangText').innerHTML = out;
 }
 document.getElementById('btnConvertEnglishToBraille').addEventListener('click', convert);
